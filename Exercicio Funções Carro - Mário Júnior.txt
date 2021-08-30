@@ -1,0 +1,71 @@
+//Exercício de Funções - Funcionalidades de um carro
+
+var statusCarro = "desligado";
+var aceleracao = 0;
+var rotacaoVolante = 0;
+var farois = "desligados";
+var marchaRe = "desengatada";
+var seta = "desligada";
+
+function ligarDesligar() {
+  if (statusCarro === "desligado") {
+    statusCarro = "ligado";
+  } else {
+    statusCarro = "desligado";
+  }
+
+  return statusCarro;
+}
+
+function acelerar(incremento) {
+  aceleracao = aceleracao + incremento;
+
+  return "Acelerando a " + aceleracao + "m/s²";
+}
+
+function frear(decremento) {
+  aceleracao = aceleracao - decremento;
+
+  return "Desacelerando para " + aceleracao + "m/s²";
+}
+
+function girarVolante(anguloRotacao) {
+  rotacaoVolante = anguloRotacao;
+
+  return rotacaoVolante + "º";
+}
+
+//Funcionalidades implementadas por mim
+
+function ligarDesligarFarois() {
+  if (farois === "desligados") {
+    farois = "ligados";
+  } else {
+    farois = "desligados";
+  }
+
+  return farois;
+}
+
+function darRe() {
+  if (statusCarro === "ligado" && marchaRe === "desengatada") {
+    marchaRe = "engatada";
+  } else {
+    marchaRe = "desengatada";
+  }
+
+  return marchaRe;
+}
+
+function darSeta() {
+  if (rotacaoVolante < 0) {
+    seta = "esquerda";
+  } else if (rotacaoVolante > 0) {
+    seta = "direita";
+  } else {
+    seta = "desligada"
+  }
+  return seta;
+}
+
+//Fim do código
