@@ -1,20 +1,29 @@
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 body {
-    background-color: lightgreen;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightgreen;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 h1 {
-    text-align: center;
-    background-color: yellow;
-    margin-top: 1em;
-    }
-div {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  text-align: center;
+  background-color: yellow;
+  margin-top: 1em;
+}
+
+section {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: x-large;
+}
+
+#msg {
+  font-size: xx-large;
+  font-weight: 750;
 }

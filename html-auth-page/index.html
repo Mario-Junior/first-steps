@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mail-Auth-Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
     <h1>HTML authentication page:</h1>
-    <div>
-    <form action="http://localhost:4000">
-        <label for="nome">Nome</label>    
-        <input id="nome" type="text" name="name">
+  </header>
+  <section>
+    <form method="get" id="form">
+      <label for="name">Name</label>    
+      <input id="name" type="text" name="name">
 
-        <label for="email">Email</label>    
-        <input id="email" type="email" name="email">
+      <label for="email">Email</label>    
+      <input id="email" type="email" name="email">
 
-        <label for="senha">Senha</label>    
-        <input id="senha" type="password" name="password">
-    
-        <button>Enviar</button>
+      <label for="pwd">Password</label>    
+      <input id="pwd" type="password" name="password">
+      
+      <button id="send-btn" onclick="landingPage(event)">Enviar</button>
     </form>
-    </div>
+    <p id="msg"></p>
+  </section>
+  <script>
+    function landingPage(event) {
+      const nameInput = document.getElementById('name');
+      const mailInput = document.getElementById('email');
+      const pwdInput = document.getElementById('pwd');
+      if (nameInput.value === '' || mailInput.value === '' || pwdInput.value === '') {
+        event.preventDefault();
+        return alert('Invalid Name, Email or Password! Please try again!');
+      } else {
+        event.preventDefault();
+        const form = document.getElementById('form');
+        const msg = document.getElementById('msg');
+
+        form.style.display = 'none';
+        msg.innerHTML = 'You are successfully logged in!'
+      }
+    }
+  </script>
 </body>
 </html>
